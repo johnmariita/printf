@@ -68,5 +68,5 @@ int print_str(char *string)
 		_putchar(*string);
 		i++;
 	}
-	return (count);
+	return (i);
 }
