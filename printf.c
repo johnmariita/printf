@@ -10,8 +10,7 @@
  */
 int _printf(const char *format, ...)
 {
-	int i = 0, count = 0;
-	char *string;
+	int i = 0, count = 0, my_int;
 	va_list argsp;
 
 	va_start(argsp, format);
@@ -19,16 +18,19 @@ int _printf(const char *format, ...)
 	{
 		if (format[i] == '%')
 		{
-			i++;
-			switch (format[i])
+			switch (format[++i])
 			{
 				case 'c':
 					_putchar(va_arg(argsp, int));
 					count++;
 					break;
+				case 'i':
+				case 'd':
+					my_int = va_arg(argsp, int);
+					count = print_num(my_int, count);
+					break;
 				case 's':
-					string = va_arg(argsp, char *);
-					count = print_str(string, count);
+					count = print_str(va_arg(argsp, char *), count);
 					break;
 				case '%':
 					_putchar('%');
@@ -60,7 +62,7 @@ int print_str(char *string, int count)
 	if (!string)
 	{
 		write(1, "(null)", 6);
-		count += 4;
+		count += 6;
 		return (count);
 	}
 	for ( ; *string; string++)
