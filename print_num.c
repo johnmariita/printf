@@ -1,10 +1,23 @@
 #include <stdlib.h>
 #include "main.h"
 
+/**
+ * print_num - function that prints an integer
+ * @my_int: the integer to be printed
+ * @count: the count of characters
+ * Return: returns the count of the digits printed
+ */
 int print_num(int my_int, int count)
 {
-	int c, num_cpy = my_int, i = 0, divisor = 1;
+	int digit, c, num_cpy, i = 0, divisor = 1;
 
+	if (my_int < 0)
+	{
+		_putchar('-');
+		count++;
+		my_int *= -1;
+	}
+	num_cpy = my_int;
 	while (my_int > 0)
 	{
 		my_int /= 10;
@@ -14,7 +27,7 @@ int print_num(int my_int, int count)
 		divisor *= 10;
 	while (divisor > 0)
 	{
-		int digit = num_cpy / divisor;
+		digit = num_cpy / divisor;
 		num_cpy %= divisor;
 		divisor /= 10;
 		_putchar(digit + '0');
