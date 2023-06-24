@@ -3,5 +3,5 @@
 
 int _putchar(int c);
 int _printf(const char *format, ...);
-int print_str(char *string);
+int print_str(char *string, int count);
 #endif

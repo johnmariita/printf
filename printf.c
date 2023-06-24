@@ -1,5 +1,6 @@
 #include <stdarg.h>
 #include <unistd.h>
+#include <stdio.h>
 #include "main.h"
 
 /**
@@ -27,7 +28,7 @@ int _printf(const char *format, ...)
 					break;
 				case 's':
 					string = va_arg(argsp, char *);
-					count = print_str(string);
+					count = print_str(string, count);
 					break;
 				case '%':
 					_putchar('%');
@@ -53,20 +54,18 @@ int _printf(const char *format, ...)
  * @string: the string
  * Return: returns the count of characters
  */
-int print_str(char *string)
+int print_str(char *string, int count)
 {
-	int i = 0;
-
 	if (!string)
 	{
 		write(1, "(null)", 6);
-		i = 4;
-		return (i);
+		count += 4;
+		return (count);
 	}
 	for ( ; *string; string++)
 	{
 		_putchar(*string);
-		i++;
+		count++;
 	}
-	return (i);
+	return (count);
 }
