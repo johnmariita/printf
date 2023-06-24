@@ -27,13 +27,7 @@ int _printf(const char *format, ...)
 					break;
 				case 's':
 					string = va_arg(argsp, char *);
-					if (string == NULL)
-						write(1, "(null)", 6);
-					for ( ; *string; string++)
-					{
-						_putchar(*string);
-						count++;
-					}
+					count = print_str(string);
 					break;
 				case '%':
 					_putchar('%');
@@ -41,7 +35,6 @@ int _printf(const char *format, ...)
 					break;
 				case 'd':
 					my_int = va_arg(argsp, int);
-					
 			}
 		}
 		else
@@ -52,5 +45,28 @@ int _printf(const char *format, ...)
 		i++;
 	}
 	va_end(argsp);
+	return (count);
+}
+
+/**
+ * print_str - function that prints a string
+ * @string: the string
+ * Return: returns the count of characters
+ */
+int print_str(char *string)
+{
+	int i = 0;
+
+	if (!string)
+	{
+		write(1, "(null)", 6);
+		i = 4;
+		return (i);
+	}
+	for ( ; *string; string++)
+	{
+		_putchar(*string);
+		i++;
+	}
 	return (count);
 }
