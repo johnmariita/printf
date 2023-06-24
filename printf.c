@@ -52,6 +52,7 @@ int _printf(const char *format, ...)
 /**
  * print_str - function that prints a string
  * @string: the string
+ * @count: keeps record of the print count
  * Return: returns the count of characters
  */
 int print_str(char *string, int count)
