@@ -1,4 +1,5 @@
 #include <stdarg.h>
+#include <unistd.h>
 #include "main.h"
 
 /**
@@ -8,7 +9,7 @@
  */
 int _printf(const char *format, ...)
 {
-	int i = 0, count = 0;
+	int i = 0, count = 0, my_int;
 	char *string;
 	va_list argsp;
 
@@ -25,7 +26,10 @@ int _printf(const char *format, ...)
 					count++;
 					break;
 				case 's':
-					for (string = va_arg(argsp, char *); *string; string++)
+					string = va_arg(argsp, char *);
+					if (string == NULL)
+						write(1, "(null)", 6);
+					for ( ; *string; string++)
 					{
 						_putchar(*string);
 						count++;
@@ -35,6 +39,9 @@ int _printf(const char *format, ...)
 					_putchar('%');
 					count++;
 					break;
+				case 'd':
+					my_int = va_arg(argsp, int);
+					
 			}
 		}
 		else
