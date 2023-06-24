@@ -10,7 +10,7 @@
  */
 int _printf(const char *format, ...)
 {
-	int i = 0, count = 0, my_int;
+	int i = 0, count = 0;
 	char *string;
 	va_list argsp;
 
