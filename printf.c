@@ -34,8 +34,6 @@ int _printf(const char *format, ...)
 					_putchar('%');
 					count++;
 					break;
-				case 'd':
-					my_int = va_arg(argsp, int);
 			}
 		}
 		else
