@@ -46,5 +46,5 @@ int format_handler(char c, va_list ap, int count)
 			count += 2;
 			break;
 	}
-	return (count - 1);
+	return (count);
 }
