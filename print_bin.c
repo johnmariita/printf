@@ -8,7 +8,7 @@
  * @count: keeping record of the characters printed to the stdout
  * Return: returns the count of characters printed
  */
-int print_bin(int num, int count)
+int print_bin(unsigned int num, int count)
 {
 	if (num == 1)
 	{
