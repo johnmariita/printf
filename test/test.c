@@ -17,7 +17,7 @@ int main(void)
 {
 	unsigned int ui = (unsigned int)INT_MAX + 1024;
 	_printf("Unsigned octal:[%o]\n", ui);
-	int x = _printf("%b\n", 1);
+	int x = _printf("%d\n", 98);
 	printf("%d\n", x);
 	_printf("Unsigned hexadecimal:[%x, %X]\n", ui, ui);
 	_printf("Unsigned:[%u]\n", ui);

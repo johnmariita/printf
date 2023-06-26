@@ -10,17 +10,29 @@
  */
 int print_bin(unsigned int num, int count)
 {
-	if (num == 1)
+	int i = 0, index, length = 0;
+	unsigned int temp = num, rem;
+	char buffer[1024];
+
+	while (temp > 0)
 	{
-		_putchar('1');
-		return (count);
+		temp /= 2;
+		length++;
 	}
-	else if (num == 0)
+	index = length - 1;
+	while (num > 0)
 	{
-		_putchar('0');
-		return (count);
+		rem = num % 2;
+		buffer[index] = rem + '0';
+		num /= 2;
+		index--;
 	}
-	count += 1 + print_bin(num >> 1, count);
-	num & 1 ? _putchar('1') : _putchar('0');
+	buffer[length] = '\0';
+	while (buffer[i])
+	{
+		_putchar(buffer[i]);
+		count++;
+		i++;
+	}
 	return (count);
 }
