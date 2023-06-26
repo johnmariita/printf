@@ -1,4 +1,3 @@
-#include <stdarg.h>
 #include <unistd.h>
 #include <stdio.h>
 #include "main.h"
@@ -18,28 +17,8 @@ int _printf(const char *format, ...)
 	{
 		if (format[i] == '%')
 		{
-			switch (format[++i])
-			{
-				case 'c':
-					_putchar(va_arg(argsp, int));
-					count++;
-					break;
-				case 'i':
-				case 'd':
-					count = print_num(va_arg(argsp, int), count);
-					break;
-				case 's':
-					count = print_str(va_arg(argsp, char *), count);
-					break;
-				case '%':
-					_putchar('%');
-					count++;
-					break;
-				default:
-					_putchar('%');
-					_putchar(format[i]);
-					break;
-			}
+			i++;
+			count = format_handler(format[i], argsp, count);
 		}
 		else
 		{
