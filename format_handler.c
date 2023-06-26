@@ -26,6 +26,16 @@ int format_handler(char c, va_list ap, int count)
 		case 'b':
 			count = print_bin(va_arg(ap, int), count);
 			break;
+		case 'u':
+			count = print_uns(va_arg(ap, unsigned int), count);
+			break;
+		case 'x':
+		case 'X':
+			count = print_hex(va_arg(ap, unsigned int), count, c);
+			break;
+		case 'o':
+			count = print_oct(va_arg(ap, unsigned int), count);
+			break;
 		case '%':
 			_putchar('%');
 			break;
