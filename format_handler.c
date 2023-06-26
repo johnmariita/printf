@@ -24,7 +24,7 @@ int format_handler(char c, va_list ap, int count)
 			count = print_str(va_arg(ap, char *), count);
 			break;
 		case 'b':
-			count = print_bin(va_arg(ap, int), count);
+			count = print_bin(va_arg(ap, unsigned int), count);
 			break;
 		case 'u':
 			count = print_uns(va_arg(ap, unsigned int), count);
