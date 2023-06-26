@@ -19,7 +19,7 @@ int print_bin(int num, int count)
 		_putchar('0');
 		return (count + 1);
 	}
-	print_bin(num >> 1, count++);
-	num & 1 ? _putchar('1') : _putchar('0');
+	count = print_bin(num >> 1, count);
+	_putchar(num & 1 ? '1' : '0');
 	return (count);
 }

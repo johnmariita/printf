@@ -11,18 +11,16 @@
 int print_uns(unsigned int num, int count)
 {
 	char buffer[1024];
-	int length = 0;
-	int index;
+	int i, length = 0;
 	unsigned int temp = num;
-	int i = 0;
 
 	while (temp > 0)
 	{
 		temp /= 10;
 		length++;
 	}
-	index = length - 1;
-	while (num > 0)
+	int index = length - 1;
+	while (num >= 0)
 	{
 		buffer[index] = '0' + (num % 10);
 		num /= 10;
