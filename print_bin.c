@@ -1,4 +1,5 @@
 #include <stdlib.h>
+#include <stdio.h>
 #include "main.h"
 
 /**
@@ -12,14 +13,14 @@ int print_bin(int num, int count)
 	if (num == 1)
 	{
 		_putchar('1');
-		return (count + 1);
+		return (count);
 	}
 	else if (num == 0)
 	{
 		_putchar('0');
-		return (count + 1);
+		return (count);
 	}
-	count = print_bin(num >> 1, count);
-	_putchar(num & 1 ? '1' : '0');
+	count += 1 + print_bin(num >> 1, count);
+	num & 1 ? _putchar('1') : _putchar('0');
 	return (count);
 }
