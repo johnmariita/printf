@@ -2,6 +2,13 @@
 #include <unistd.h>
 #include "main.h"
 
+/**
+ * print_addr - prints the address pointer
+ * @addr: the address in hexadecimal
+ * @count:the number of characters
+ * Return:the count
+ */
+
 int print_addr(unsigned long int addr, int count)
 {
 	char buffer[1024];
