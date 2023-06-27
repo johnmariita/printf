@@ -20,9 +20,11 @@ int format_handler(char c, va_list ap, int count)
 			count = print_num(va_arg(ap, int), count);
 			break;
 		case 's':
-		case 'S':
 		case 'r':
 			count = print_str(va_arg(ap, char *), count, c);
+			break;
+		case 'S':
+			count = non_print(va_arg(ap, char *), count);
 			break;
 		case 'b':
 			count = print_bin(va_arg(ap, unsigned int), count);
