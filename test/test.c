@@ -18,10 +18,6 @@ int main(void)
 	unsigned int ui = (unsigned int)INT_MAX + 1024;
 	_printf("Unsigned octal:[%o]\n", ui);
 	int x = _printf("%d\n", 98);
-	printf("% d\n", x);
-	printf("%s", "alx");
-	_printf("Unsigned hexadecimal:[%x, %X]\n", ui, ui);
-	_printf("Unsigned:[%u]\n", ui);
-	_printf("Unsigned octal:[%o]\n", 3887);
-	_printf("%");
+	printf("alx");
+	_printf("%r\n", "BEST SCHOOL");
 }

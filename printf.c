@@ -45,20 +45,37 @@ int _printf(const char *format, ...)
  * print_str - function that prints a string
  * @string: the string
  * @count: keeps record of the print count
+ * @character: the ascii of the character
  * Return: returns the count of characters
  */
-int print_str(char *string, int count)
+int print_str(char *string, int count, int character)
 {
+	int length = 0;
+
 	if (!string)
 	{
 		write(1, "(null)", 6);
 		count += 6;
 		return (count);
 	}
-	for ( ; *string; string++)
+	if (character == 's')
 	{
-		_putchar(*string);
-		count++;
+		for ( ; *string; string++)
+		{
+			_putchar(*string);
+			count++;
+		}
+	}
+	else if (character == 'r')
+	{
+		while (string[length])
+			length++;
+		length--;
+		while (length >= 0)
+		{
+			count += _putchar(string[length]);
+			length--;
+		}
 	}
 	return (count);
 }
