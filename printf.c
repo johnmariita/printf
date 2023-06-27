@@ -36,6 +36,12 @@ int _printf(const char *format, ...)
 				i++;
 				continue;
 			}
+			else if (format[i] == 'R')
+			{
+				count += print_rot(va_arg(argsp, char *), count);
+				i++;
+				continue;
+			}
 			count = format_handler(format[i], argsp, count);
 		}
 		else

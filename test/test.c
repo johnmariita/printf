@@ -9,4 +9,5 @@ int main()
 	_printf("%%%%\n");
 	_printf("%S\n", "BEST\nSCHOOL");
 	_printf("%S\n", "ALX\nSE");
+	_printf("%R\n", "xyz");
 }
