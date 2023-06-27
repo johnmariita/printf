@@ -39,6 +39,9 @@ int format_handler(char c, va_list ap, int count)
 		case 'o':
 			count = print_oct(va_arg(ap, unsigned int), count);
 			break;
+		case 'p':
+			count = print_addr(va_arg(ap, unsigned long int), count);
+			break;
 		case '%':
 			count += _putchar('%');
 			break;

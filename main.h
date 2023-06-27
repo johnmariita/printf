@@ -13,4 +13,5 @@ int print_uns(unsigned int num, int count);
 int print_hex(unsigned int num, int count, int x);
 int print_oct(unsigned int num, int count);
 int non_print(char *string, int count);
+int print_addr(unsigned long int addr, int count);
 #endif
