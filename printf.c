@@ -64,7 +64,7 @@ int print_str(char *string, int count, int character)
 	{
 		write(1, "(null)", 6);
 		count += 6;
-		return (-1);
+		return (count);
 	}
 	if (character == 's')
 	{
