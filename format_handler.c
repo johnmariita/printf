@@ -42,9 +42,6 @@ int format_handler(char c, va_list ap, int count)
 		case 'p':
 			count = print_addr(va_arg(ap, unsigned long int), count);
 			break;
-		case '%':
-			count += _putchar('%');
-			break;
 		default:
 			count += _putchar('%');
 			count += _putchar(c);
