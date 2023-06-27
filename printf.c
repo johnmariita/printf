@@ -9,22 +9,18 @@
  */
 int _printf(const char *format, ...)
 {
-	int i = 0, count = 0;
+	int k = 0, i = 0, count = 0;
 	va_list argsp;
 
 	va_start(argsp, format);
 	if (format == NULL)
 		return (-1);
-	while (format[i])
+	while (format[k])
 	{
-		if (format[i] == '%' && !format[i + 1])
+		if (format[k] == '%' && !format[k + 1])
 			return (-1);
-		if (format[i] == '%' && format[i + 1] == ' ')
-			if (format[i + 2] != 'd' || format[i + 2] != 'i')
-				return (-1);
-		i++;
+		k++;
 	}
-	i = 0;
 	while (format[i])
 	{
 		if (format[i] == '%')
