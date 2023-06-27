@@ -13,6 +13,8 @@ int _printf(const char *format, ...)
 	va_list argsp;
 
 	va_start(argsp, format);
+	if (format == NULL)
+		return (-1);
 	while (format[i])
 	{
 		if (format[i] == '%' && !format[i + 1])
