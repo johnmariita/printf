@@ -1,5 +1,11 @@
 #include <stdio.h>
 #include "main.h"
+/**
+ * print_rot - encodes a string to rot 13
+ * @str: the string to be encoded
+ * @count:the number of caharacters encoded
+ * Return:the count
+ */
 
 int print_rot(char *str, int count)
 {
