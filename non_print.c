@@ -2,6 +2,13 @@
 #include <unistd.h>
 #include "main.h"
 
+/**
+ * non_print - prints non printable characters in hexadecimal form
+ * @count:number of characters printed
+ * @str:the string to be printed
+ * Return:returns the count of characters printed
+ */
+
 int non_print(char *str, int count)
 {
 	while (*str)
