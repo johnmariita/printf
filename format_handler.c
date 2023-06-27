@@ -13,8 +13,7 @@ int format_handler(char c, va_list ap, int count)
 	switch (c)
 	{
 		case 'c':
-			_putchar(va_arg(ap, int));
-			count++;
+			count += _putchar(va_arg(ap, int));
 			break;
 		case 'i':
 		case 'd':
@@ -37,13 +36,11 @@ int format_handler(char c, va_list ap, int count)
 			count = print_oct(va_arg(ap, unsigned int), count);
 			break;
 		case '%':
-			_putchar('%');
-			count++;
+			count += _putchar('%');
 			break;
 		default:
-			_putchar('%');
-			_putchar(c);
-			count += 2;
+			count += _putchar('%');
+			count += _putchar(c);
 			break;
 	}
 	return (count);
